@@ -1,5 +1,5 @@
 class ShowcaseBook extends Book {
-    public ShowcaseBook(String ISBN, String title, String year, double price, String author) {
+    public ShowcaseBook(String ISBN, String title, int year, double price, String author) {
         super(ISBN, price, author ,title, year);
     }
 

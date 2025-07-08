@@ -4,10 +4,10 @@ public abstract class Book {
     private String title ;
     private double price ;
     private String author ;
-    private String year ;
+    private int year ;
 
 
-    public Book(String ISBN, double price, String author, String title, String year) {
+    public Book(String ISBN, double price, String author, String title, int year) {
         this.ISBN = ISBN;
         this.price = price;
         this.author = author;
@@ -45,4 +45,8 @@ public abstract class Book {
 
     public abstract double buy( int quantity, String address , String email);
 
+    public int getYear() {
+        return year;
+
+    }
 }

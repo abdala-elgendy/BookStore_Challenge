@@ -1,7 +1,7 @@
 class EBook extends Book {
     private final String filetype;
 
-    public EBook(String ISBN, String title, String year, double price, String author, String filetype) {
+    public EBook(String ISBN, String title, int year, double price, String author, String filetype) {
         super(ISBN, price, author,title, year);
         this.filetype = filetype;
     }

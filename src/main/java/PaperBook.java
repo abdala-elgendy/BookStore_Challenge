@@ -2,7 +2,7 @@ public class PaperBook extends Book {
 
 
     private int quantity;
-    public PaperBook(int quantity,String ISBN, double price, String author, String title, String year) {
+    public PaperBook(int quantity,String ISBN, double price, String author, String title, int year) {
         super(ISBN, price, author, title, year);
         this.quantity = quantity;
 
