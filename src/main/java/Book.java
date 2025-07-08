@@ -1,15 +1,19 @@
 public abstract class Book {
 
     private String ISBN ;
-    private String name ;
+    private String title ;
     private double price ;
     private String author ;
+    private String year ;
 
 
-    public Book(String ISBN, double price, String author) {
+    public Book(String ISBN, double price, String author, String title, String year) {
         this.ISBN = ISBN;
         this.price = price;
         this.author = author;
+        this.title = title;
+        this.year = year;
+
     }
 
     public String getISBN() {
@@ -18,12 +22,11 @@ public abstract class Book {
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
     public double getPrice() {
         return price;
@@ -39,5 +42,7 @@ public abstract class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public abstract double buy( int quantity, String address , String email);
 
 }
