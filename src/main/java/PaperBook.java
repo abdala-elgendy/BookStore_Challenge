@@ -24,6 +24,15 @@ public class PaperBook extends Book {
         if (quantityWanted <= 0) {
             throw new IllegalArgumentException("Quantity must be greater than zero");
         }
+        if (address == null || address.isEmpty()) {
+            throw new IllegalArgumentException("Address cannot be null or empty");
+        }
+        if (email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be null or empty");
+        }
+        if (!email.contains("@")) {
+            throw new IllegalArgumentException("Invalid email format");
+        }
 
         this.quantity -= quantityWanted;
         System.out.println("Book purchased successfully. Address: " + address + ", Email: " + email);
