@@ -50,14 +50,44 @@ class RandomBookGenerator {
             default:
                 throw new IllegalStateException("Invalid book type");
         }
+
     }
 
+
+    public static void buyRandomBooks(BookStore bookstore, int attempts) {
+        List<String> isbns = new ArrayList<>(bookstore.inventory.keySet());
+        for (int i = 0; i < attempts && !isbns.isEmpty(); i++) {
+            String isbn = isbns.get(random.nextInt(isbns.size()));
+            int quantity = 1 + random.nextInt(5);
+            try {
+                double amount = bookstore.buyBook(isbn, quantity, "test@email.com", "123 Street");
+                System.out.println(" book store: Paid " + amount + " for " + quantity + " copies of book with ISBN " + isbn);
+            } catch (Exception e) {
+                System.out.println("book store: Failed to buy book with ISBN " + isbn + ": " + e.getMessage());
+            }
+        }
+    }
+    public static void removeOutdatedBooks(BookStore bookstore, int currentYear, int maxAge) {
+        try {
+            List<Book> outdated = bookstore.removeOutdatedBooks(currentYear, maxAge);
+            System.out.println("book store: Removed " + outdated.size() + " outdated books.");
+            for (Book book : outdated) {
+                System.out.println("book store: - " + book.getTitle() + " (" + book.getYear() + ")");
+            }
+        } catch (Exception e) {
+            System.out.println(" book store: Error removing outdated books: " + e.getMessage());
+        }
+    }
 
     public static void main(String[] args) {
         BookStore bookstore = new BookStore();
         addRandomBooks(bookstore, 14);
 
 
+        buyRandomBooks(bookstore, 3);
+
+
+        removeOutdatedBooks(bookstore, 2025, 10);
 
     }
 }

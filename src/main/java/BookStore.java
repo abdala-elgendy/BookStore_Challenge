@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BookStore {
-    private  Map<String, Book> inventory = new HashMap<>();
+    public  Map<String, Book> inventory = new HashMap<>();
 
     public void addBook(Book book) {
         if (book == null) {
@@ -16,6 +16,7 @@ public class BookStore {
 
         inventory.put(book.getISBN(), book);
     }
+
 
     public List<Book> removeOutdatedBooks(int currentYear, int numberOfYears) {
         List<Book> outdated = new ArrayList<>();

@@ -21,9 +21,6 @@ class EBook extends Book {
         if (email == null || email.isEmpty()) {
             throw new IllegalArgumentException("Email cannot be null or empty");
         }
-        if (!email.contains("@")) {
-            throw new IllegalArgumentException("Invalid email format");
-        }
 
         double total = getPrice() * quantity;
         MailService.sendEBook(this, email, quantity);
