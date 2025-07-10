@@ -81,10 +81,11 @@ class RandomBookGenerator {
 
     public static void main(String[] args) {
         BookStore bookstore = new BookStore();
-        addRandomBooks(bookstore, 14);
+
+        addRandomBooks(bookstore, 7);
 
 
-        buyRandomBooks(bookstore, 3);
+        buyRandomBooks(bookstore, 5);
 
 
         removeOutdatedBooks(bookstore, 2025, 10);
