@@ -2,7 +2,9 @@
 
 The output of the program 
 [https://github.com/abdala-elgendy/BookStore_Challenge/blob/master/img.png]
-I create addint,  buying, and deleting outdated books randomly to check all functionality 
+
+
+I create adding ,  buying, and deleting outdated books randomly to check all functionality 
 
 ## Features
 
